@@ -11,4 +11,8 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
  <servlet-name>lcd</servlet-name>
  <url-pattern>/lcd</url-pattern>
  </servlet-mapping>
+ <servlet-mapping>
+ <servlet-name>lcd</servlet-name>
+ <url-pattern>/setlcd</url-pattern>
+ </servlet-mapping>
 </web-app>
