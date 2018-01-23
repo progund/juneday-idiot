@@ -22,7 +22,6 @@
  ****/
 
 #include <Arduino.h>
-#include "searduino.h"
 #include "LiquidCrystal.h"
 
 LiquidCrystal lcd(8, 9, 4, 5, 6, 7);   // init LiquidCrystal 
@@ -41,27 +40,28 @@ extern "C" {
       lcd.print(text);    
   }
 
-  void scroll_lcd(char *text)
+  void scroll_lcd(char *text, char *prev)
   {
+    int i ;
+    int len;
+
     lcd.setCursor(0,0);
     lcd.print(text);
-    lcd.scrollDisplayLeft();
-    delay (150);
-    lcd.scrollDisplayLeft();
-    delay (150);
-    lcd.scrollDisplayLeft();
-    delay (150);
-    lcd.scrollDisplayRight();
-    delay (150);
-    lcd.scrollDisplayRight();
-    delay (150);
-    lcd.scrollDisplayRight();
-    delay (150);
-    printf("done...\n");
+    lcd.setCursor(0,1);
+    lcd.print(prev);
+
+    len = strlen(text); 
+    if (len>13)
+      {
+	for (i=0;i<len;i++)
+	  {
+	    lcd.scrollDisplayLeft();
+	    delay (400);
+	  }
+	lcd.setCursor(0,0);
+	lcd.print(text);
+	lcd.setCursor(0,1);
+	lcd.print(prev);
+      }
   }
-  void loop(void) {
-    scroll_lcd("loop");
-  }
-  
-  
 }
