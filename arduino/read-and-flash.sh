@@ -4,7 +4,7 @@ PREV="\"\""
 CURR=""
 while (true)
 do
-    TEXT=`curl -s http://localhost:8080/lcd?format=json | jq '.message' | sed -e 's,å,aa,g' -e 's,Å,Aa,g' -e 's,Ä,ae,g' -e 's,Ä,Ae,g'  -e 's,ö,oe,g' -e 's,Ö,Oe,g' ` 
+    TEXT=`curl -s http://localhost:9090/lcd?format=json | jq '.message' | sed -e 's,å,aa,g' -e 's,Å,Aa,g' -e 's,Ä,ae,g' -e 's,Ä,Ae,g'  -e 's,ö,oe,g' -e 's,Ö,Oe,g' ` 
     if [ "$CURR" != "$TEXT" ]
     then
 	if [ "$PREV" = "" ]
