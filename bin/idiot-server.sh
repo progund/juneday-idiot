@@ -2,7 +2,7 @@
 
 LOG_FILE=/tmp/idiot.log
 
-SERVER_DIR=/home/hesa/opt/prog-unbook/juneday-infosystem/server/
+SERVER_DIR=../server/
 THIS_SCRIPT=$(pwd)/$(dirname $0)/$(basename $0)
 LOG=true
 
