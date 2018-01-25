@@ -56,7 +56,7 @@ MAIN_SRC=main.c
 #USER_CXX_FLAGS=-ffunction-sections -Wl,-gc-sections 
 USER_LD_FLAGS= -ffunction-sections -Wl,-gc-sections 
 
-SEARDUINO_PATH=/tmp/searduino-2
+SEARDUINO_PATH=/opt/searduino
 
 all:
 
