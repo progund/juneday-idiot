@@ -22,7 +22,7 @@
  ****/
 
 #include <Arduino.h>
-//#include "searduino.h"
+#include "searduino.h"
 
 #include "lcd-shield.h"
 
@@ -40,3 +40,20 @@ void loop()
 {
   scroll_lcd(__LCD_TEXT__ , __LCD_PREV_TEXT__ );
 }
+
+
+int main(void)
+{
+  
+  init();
+  setup();
+
+  /* The following line uses a Saerduino macro 
+   * You could use a plain "for (;;)" instead
+   */
+  SEARDUINO_LOOP()
+    {
+      loop();
+    }
+}
+
