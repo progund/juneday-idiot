@@ -6,6 +6,9 @@ SERVER_DIR=/home/hesa/opt/prog-unbook/juneday-infosystem/server/
 THIS_SCRIPT=$(pwd)/$(dirname $0)/$(basename $0)
 LOG=true
 
+PORT1=9090
+PORT2=9091
+
 log()
 {
     if [ "$LOG" = "true" ]
@@ -26,7 +29,7 @@ start_server()
     cd $SERVER_DIR
     slog "  start server"
     make clean all
-    java  -jar winstone.jar --webroot=www &
+    java  -jar winstone.jar --webroot=www --httpPort=$PORT1 --ajp13Port=$PORT2 &
     JPID=$!
     echo -n "$JPID" > /tmp/idiot.pid
     wait $JPID
