@@ -29,7 +29,7 @@ start_server()
     cd $SERVER_DIR
     slog "  start server"
     make clean all
-    java  -jar winstone.jar:org.json.jar --webroot=www --httpPort=$PORT1 --ajp13Port=$PORT2 &
+    java  -jar winstone.jar --webroot=www --httpPort=$PORT1 --ajp13Port=$PORT2 &
     JPID=$!
     echo -n "$JPID" > /tmp/idiot.pid
     wait $JPID
