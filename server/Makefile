@@ -9,7 +9,8 @@ SERVLET_CLASSES=${SERVLET_FILES:%.java=%.class}
 
 INFO_JAR=www/WEB-INF/lib/juneday-info.jar
 SERVLET_JAR=winstone.jar
-CLASSPATH=-cp $(SERVLET_JAR):www/WEB-INF/classes:../info-store/
+JSON_JAR=org.json.jar
+CLASSPATH=-cp $(SERVLET_JAR):$(JSON_JAR):www/WEB-INF/classes:../info-store/
 
 %.class:%.java
 	javac $(CLASSPATH) $<
