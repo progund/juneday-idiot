@@ -33,6 +33,7 @@ start_server()
     JPID=$!
     echo -n "$JPID" > /tmp/idiot.pid
     wait $JPID
+    cd -
 }
 
 keep_server()
